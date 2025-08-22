@@ -1,0 +1,156 @@
+body {
+  font-family: 'Courier New', Courier, monospace;
+  background-color: #000;
+  color: #00ff66;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.crt-screen {
+  background: radial-gradient(circle at center, #0d0d0d 0%, #000 85%);
+  border: 0.4vw solid #00ff66;
+  border-radius: 6vh / 2vh;
+  padding: 3vh 3vw;
+  width: 90vw;
+  height: 90vh;
+  box-shadow:
+    inset 0 0 10vh rgba(0, 255, 100, 0.15),
+    inset 0 0 4vh rgba(0, 255, 100, 0.25),
+    inset 0 0 1vh rgba(0, 255, 100, 0.4),
+    0 0 3vh rgba(0, 255, 100, 0.6),
+    0 0 6vh rgba(0, 255, 100, 0.4);
+  position: relative;
+  text-align: center;
+  transform: perspective(1000px) rotateX(1.5deg) rotateY(-1.5deg);
+  animation: crtFlicker 2.5s infinite;
+  overflow: hidden;
+}
+
+.crt-screen::before {
+  content: "";
+  position: absolute;
+  top: -10%;
+  left: -15%;
+  width: 130%;
+  height: 130%;
+  background: radial-gradient(
+    ellipse at 30% 20%,
+    rgba(255, 255, 255, 0.08) 0%,
+    rgba(255, 255, 255, 0.04) 25%,
+    transparent 70%
+  );
+  transform: rotate(-8deg) skewX(-10deg);
+  filter: blur(8px);
+  opacity: 0.65;
+  pointer-events: none;
+}
+
+
+
+
+@keyframes crtFlicker {
+  0%, 100% {
+    box-shadow:
+      inset 0 0 10vh rgba(0, 255, 100, 0.15),
+      inset 0 0 4vh rgba(0, 255, 100, 0.25),
+      inset 0 0 1vh rgba(0, 255, 100, 0.4),
+      0 0 3vh rgba(0, 255, 100, 0.6),
+      0 0 6vh rgba(0, 255, 100, 0.4);
+  }
+  50% {
+    box-shadow:
+      inset 0 0 11vh rgba(0, 255, 100, 0.2),
+      inset 0 0 4.5vh rgba(0, 255, 100, 0.3),
+      inset 0 0 1.5vh rgba(0, 255, 100, 0.5),
+      0 0 3.5vh rgba(0, 255, 100, 0.7),
+      0 0 7vh rgba(0, 255, 100, 0.5);
+  }
+}
+
+/* Líneas horizontales CRT */
+.crt-screen::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 255, 0, 0.08) 0px,
+    rgba(0, 255, 0, 0.08) 0.3vh,
+    transparent 0.5vh,
+    transparent 0.7vh
+  );
+  pointer-events: none;
+}
+
+h1, h2, label, p, li {
+  color: #00ff66;
+  text-shadow: 0 0 0.8vh #00ff66;
+  font-size: 3vh;
+}
+
+#nombreInput {
+  background-color: #111;
+  border: 0.3vh solid #00ff66;
+  color: #00ff66;
+  padding: 1.2vh 1vw;
+  border-radius: 0.5vh;
+  outline: none;
+  font-size: 2vh;
+  box-shadow: 0 0 0.7vh #00ff66;
+}
+
+#nombreInput::placeholder {
+  color: #00aa44;
+}
+
+button {
+  background-color: #111;
+  border: 0.3vh solid #00ff66;
+  color: #00ff66;
+  padding: 1.2vh 2vw;
+  margin: 1vh;
+  border-radius: 0.5vh;
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: all 0.2s ease-in-out;
+  font-size: 2vh;
+  box-shadow: 0 0 0.7vh #00ff66;
+}
+
+button:hover {
+  background-color: #00ff66;
+  color: #111;
+  box-shadow: 0 0 1vh #00ff66, 0 0 2vh #00ff66;
+}
+
+#resultado {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  margin-top: 4vh;
+  color: #00ff66;
+  text-shadow: 0 0 1vh #00ff66, 0 0 2vh rgba(0, 255, 100, 0.7);
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 0.4vh solid #00ff66;
+  width: 0;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to   { width: 100%; }
+}
+
+@keyframes blinkCursor {
+  from { border-right-color: #00ff66; }
+  to   { border-right-color: transparent; }
+}
