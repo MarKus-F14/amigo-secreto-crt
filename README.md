@@ -84,7 +84,7 @@ Además, añadí efectos visuales y animaciones para que el proyecto se sintiera
 ## 🚀 Cómo probarlo
 
 1. Ingresa al sitio publicado con **GitHub Pages**:  
-   👉 [Jugar ahora](https://MarKus-F14.github.io/amigo-secreto-crt/)  
+ [Jugar ahora](https://MarKus-F14.github.io/amigo-secreto-crt/)  
 
 2. Escribe los nombres de tus amigos en el campo de texto y añádelos con el botón **“Adicionar”**.  
 
@@ -92,7 +92,7 @@ Además, añadí efectos visuales y animaciones para que el proyecto se sintiera
 
 ---
 
-## 👨‍💻 Autor
+## Autor
 
 Proyecto realizado como parte del *challenge* de **Alura Latam**, con investigación adicional y mejoras propias.  
 Gracias a la ayuda de **ChatGPT** logré perfeccionar la lógica y el estilo visual CRT para darle un aspecto muy Fallout 3 al proyecto.  
