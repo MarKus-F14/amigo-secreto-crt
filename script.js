@@ -11,12 +11,12 @@ btnAdicionar.addEventListener("click", () => {
   const nombre = inputNombre.value.trim();
 
   if (nombre === "") {
-    alert("⚠️ Escribe un nombre válido.");
+    alert("Escribe un nombre válido.");
     return;
   }
 
   if (participantes.includes(nombre)) {
-    alert("⚠️ Ese nombre ya está en la lista.");
+    alert(":1 Ese nombre ya está en la lista.");
     return;
   }
 
